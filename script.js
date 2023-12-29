@@ -1,18 +1,42 @@
-const winnersChoice = ['rock','paper','scissors'];
-const losersChoice = ['scissors','rock','paper'];
-// function to get computer choice
+const arrOne = ['rock','paper','scissors'];
+const arrTwo = ['scissors','rock','paper'];
+
 function getComputerChoice(){
-    return winnersChoice[Math.floor(Math.random() * 3)];
+    return arrOne[Math.floor(Math.random()*3)];
 }
-// function to play just one round of rock paper scissor. takes the computers choice and players choice. replays round if there is a tie
+
 function playOneRound(computerChoice, playerChoice){
-    //case computer wins
-    console.log(computerChoice);
-    if(winnersChoice.indexOf(computerChoice) === losersChoice.indexOf(playerChoice)){
-        return 'computer';
-    } else if(winnersChoice.indexOf(playerChoice) === losersChoice.indexOf(computerChoice)){
-        return 'player';
+    let roundWinner = null;
+    while(!roundWinner){
+        console.log(`Player choose: ${playerChoice} | Computer choose ${computerChoice}`);
+        if(arrOne.indexOf(computerChoice) === arrTwo.indexOf(playerChoice)){
+            roundWinner = 'computer';
+            break;
+        }
+        else if(arrOne.indexOf(playerChoice) === arrTwo.indexOf(computerChoice)){ roundWinner = 'player';
+        break;
+        }
+
+        computerChoice = getComputerChoice();
+        playerChoice = prompt('Enter rock paper or scissors').toLowerCase();
     }
-    // if there is no winner, or the player enters an improper value, redo the round.
-    return(playOneRound(getComputerChoice(), prompt("Enter rock paper or scissors").toLowerCase()));
+
+    return roundWinner;
+}
+
+
+function game(){
+    let winner = null;
+    let playerWinCount = 0;
+    let computerWinCount = 0;
+
+    while(!winner){
+        let roundWinner = playOneRound(getComputerChoice(),prompt('Enter rock paper or scissors').toLowerCase());
+        console.log("Round winner is: " + roundWinner); 
+        roundWinner == 'player' ? playerWinCount++ : computerWinCount++;
+        if(playerWinCount === 3) winner = 'player';
+        if(computerWinCount === 3) winner = 'computer';
+    }
+
+    return `Winner is ${winner}`;
 }
