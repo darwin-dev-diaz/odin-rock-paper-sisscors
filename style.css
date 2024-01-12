@@ -1,0 +1,96 @@
+html, body {
+    margin:0px;
+    height:100%;
+  }
+  .game-screen {
+    background:red;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .game-status,
+  .computer-choice,
+  .player-choice{
+    padding: 30px;
+  }
+  .game-status{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .round-icons{
+    display: flex; 
+    gap: 25px;
+    /* justify-content: center;  */
+  }
+  .round-icon{
+    background-color: darkgrey;
+
+    height: 100px;
+    width: 100px;
+    font-size: 70px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .current-round{
+    outline: 4px solid darkgray;
+    outline-offset: 10px;
+  }
+
+  .player-won{
+    background-color: green;
+  }
+  .player-won::before{
+    content: '🙋🏽‍♂️';
+  }
+  .robot-won{
+    background-color: red;
+  }
+  .robot-won::before{
+    content: '🤖';
+  }
+
+  .player-choice,
+  .computer-choice{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-choice-icon,
+  .computer-choice-icon{
+    background-color: darkgrey;
+    border: 2px solid darkgrey;
+
+    height: 150px;
+    width: 150px;
+    font-size: 70px;
+    border-radius: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player-choice-icons{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .player-choice-icon:hover{
+    background-color: gray;
+    border: 2px solid gray;
+    cursor:pointer;
+  }

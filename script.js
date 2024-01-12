@@ -1,5 +1,5 @@
-const arrOne = ['rock','paper','scissors'];
-const arrTwo = ['scissors','rock','paper'];
+const arrOne = ['👊🏽','🖐🏽','✌🏽'];
+const arrTwo = ['✌🏽','👊🏽','🖐🏽'];
 
 function getComputerChoice(){
     return arrOne[Math.floor(Math.random()*3)];
@@ -13,7 +13,7 @@ function playOneRound(computerChoice, playerChoice){
             roundWinner = 'computer';
             break;
         }
-        else if(arrOne.indexOf(playerChoice) === arrTwo.indexOf(computerChoice)){ roundWinner = 'player';
+        else if(arrOne.indexOf(playerChoice) === arrTwo.indexOf(computerChoice)){       roundWinner = 'player';
         break;
         }
 
