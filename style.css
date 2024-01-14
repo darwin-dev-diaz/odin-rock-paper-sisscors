@@ -52,10 +52,10 @@ html, body {
   .player-won::before{
     content: '🙋🏽‍♂️';
   }
-  .robot-won{
+  .computer-won{
     background-color: red;
   }
-  .robot-won::before{
+  .computer-won::before{
     content: '🤖';
   }
 
