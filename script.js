@@ -76,7 +76,7 @@ playerChoiceIcon.forEach((currentElement) => {
   currentElement.addEventListener("click", (e) => {
     playerChoice = e.target.innerText;
     computerChoice = getComputerChoice();
-    roundWinner = playOneRound(computerChoic  e, playerChoice);
+    roundWinner = playOneRound(computerChoice, playerChoice);
 
     if(roundWinner === 'player') playerWinCount += 1;
     else if(roundWinner === 'computer') computerWinCount += 1;
